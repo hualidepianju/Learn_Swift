@@ -67,7 +67,7 @@ var intArray = [1,2,3,4,5,6,7,]
 var strArray = ["a","s","d","a","s","s","d",]
 /*你可以在[]写入你想存入的任何字符、字符串或数字*/
 //格式有四种任意选择
-var someArray1 = []                                                             //通用、无限制数组
+var someArray1 = []                                                             //通用且具用隐性类型的数组（数组内不能同时存有String和Int类型）
 var someArray2 = [SomeType]()                                                   //特定类型的数组
 var someArray3 : [SomeTyoe] = []                                                //同上
 var someArray4 = [SomeType](repeating: InitialValue, count: NumbeOfElements)    //创建特定内容（repeating）、大小（count）的数组
@@ -80,3 +80,13 @@ var someVar = intArray[6]                             //该语句表明在intArr
                                                       //但实际计算数组方式为1-m，故实际数组个数与程序数组个数差一位，即m-1，就可得出
 print(someVar)                                        //结果为7
 //03）向数组添加内容
+var intArray1 = [Int]()          //创建空白Int类型数组
+intArray1.append(30)             //向数组intArray1中添加数字30
+intArray1 += [40]                //向数组intArray1中添加数字40 
+print(intArray1)                 //打印数组intArray1
+
+var strArray1 = [String]()          //创建空白Str类型数组
+strArray1.append("30")              //向数组strArray1中添加字符30
+strArray1 += ["1"]                  //向数组strArray1中添加字符40 
+print(strArray1)                    //打印数组strArray1
+
