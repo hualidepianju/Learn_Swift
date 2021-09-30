@@ -41,3 +41,42 @@ let l = "hello,word"  //常量l以隐性string类型被声明且被赋值为hell
 let w = 94            //常量w以隐性int类型被声明且被赋值为94，这时将常量w用print(w)打印出来可得：94
 let wl = w + Int(l)   //常量wl以显性Int的l和隐性的Int的w被声明
                       //程序报错 Value of optional type 'Int?' must be unwrapped to a value of type 'Int'（可选类型“Int?”的值必须解包为“Int”类型的值）
+
+//如何将函数的值包含在字符串里,可以使用 \() 
+let xInt = 56                              //定义常量xInt以隐性Int类型声明且赋值为56
+let str = "hello,\(xInt)word"              //定义常量str以隐性String类型声明且赋值为“hello，\(xInt)word”
+                                           //其中 \(xInt) 是将常量xInt 隐性的从Int类型转化为String类型
+print(str)                                 //所以通过print()打印输出，可得到 hello，56word
+let str1 = "hello\(str),word"  
+let str2 = "hello\(str + str1),word"       //另外，\()的()内允许诸如此类（a+b）的内容
+
+//若想像我这样，请使用 """ （三个英文输入法状态下的双引号连续三个）
+let yStr = """ 
+你好，你以为
+这时多行
+输入
+其实，
+这是在同一行
+"""
+
+//接下来就是数组索引了
+//使用 [] 来创建数组或索引
+//案例一 ： 数组
+//01）创建数组
+var intArray = [1,2,3,4,5,6,7,]
+var strArray = ["a","s","d","a","s","s","d",]
+/*你可以在[]写入你想存入的任何字符、字符串或数字*/
+//格式有四种任意选择
+var someArray1 = []                                                             //通用、无限制数组
+var someArray2 = [SomeType]()                                                   //特定类型的数组
+var someArray3 : [SomeTyoe] = []                                                //同上
+var someArray4 = [SomeType](repeating: InitialValue, count: NumbeOfElements)    //创建特定内容（repeating）、大小（count）的数组
+
+
+//02）访问数组
+var someVar = someArray[index]                                                  //index 索引从 0 开始，即索引 0 对应第一个元素，索引 1 对应第二个元素，以此类推。
+/*如何访问数组*/
+var someVar = intArray[6]                             //该语句表明在intArray[]数组中将第七个数字取出（因为程序计算数组个数方式为0-n
+                                                      //但实际计算数组方式为1-m，故实际数组个数与程序数组个数差一位，即m-1，就可得出
+print(someVar)                                        //结果为7
+//03）向数组添加内容
