@@ -80,13 +80,48 @@ var someVar = intArray[6]                             //该语句表明在intArr
                                                       //但实际计算数组方式为1-m，故实际数组个数与程序数组个数差一位，即m-1，就可得出
 print(someVar)                                        //结果为7
 //03）向数组添加内容
-var intArray1 = [Int]()          //创建空白Int类型数组
-intArray1.append(30)             //向数组intArray1中添加数字30
-intArray1 += [40]                //向数组intArray1中添加数字40 
-print(intArray1)                 //打印数组intArray1
+var intArray1 = [Int]()                               //创建空白Int类型数组
+intArray1.append(30)                                  //向数组intArray1末尾中添加数字30
+intArray1.append(contents0f: [1234,23456,])           //向数组intArray1末尾中添加另一个数组[1234,23456,]
+intArray1 += [40]                                     //向数组intArray1末尾中添加数字40 
+print(intArray1)                                      //打印数组intArray1
+intArray1.insert(88, at: X)                           //向数组strArray1中第0位添加元素 “This String”
+intArray1.insert(contents0f: [123,2131312,],at: X)    //向数组strArray1中第0位添加另一数组["123","2131312",]
 
-var strArray1 = [String]()          //创建空白Str类型数组
-strArray1.append("30")              //向数组strArray1中添加字符30
-strArray1 += ["1"]                  //向数组strArray1中添加字符40 
-print(strArray1)                    //打印数组strArray1
+
+var strArray1 = [String]()                                //创建空白Str类型数组
+strArray1.append("30")                                    //向数组strArray1末尾中添加字符30
+strArray1.append(contents0f: ["1234","23456",])           //向数组strArray1末尾中添加另一个数组[1234,23456,]
+strArray1 += ["1"]                                        //向数组strArray1末尾中添加字符40 
+print(strArray1)                                          //打印数组strArray1
+strArray1.insert("This String", at: X)                    //向数组strArray1中第0位添加元素 “This String”
+strArray1.insert(contents0f: ["123","2131312",],at: X)    //向数组strArray1中第0位添加另一数组["123","2131312",]
+
+/*注意⚠️函数insert(contents0f:[],at:X)及insert("",at:X)中X的值不得大于原有数组最高位*/
+
+//04)从原有数组中删除某一元素
+var intArray = [1,2,3,4,5,6,7,]
+
+intArray.removeFirst()            //删除intArray数组中第一个元素
+print(intArray)
+
+intArray.removeEnd()              //删除intArray数组中最后一个元素
+print(intArray)                   
+
+intArray.remove(at: X)        //删除intArray数组中第 X（0-n） 位的元素
+
+/*注意⚠️函数remove(at:X)中X的值不得大于原有数组最高位*/
+
+//特殊删除元素方法
+var animals = ["cats", "dogs", "chimps", "moose", "chimps"]
+
+animals = animals.filter(){$0 != "chimps"}
+print(animals)                              // ["cats", "dogs", "moose"]
+
+
+
+
+
+
+
 
