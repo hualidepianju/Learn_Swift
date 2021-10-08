@@ -230,5 +230,17 @@ default:
 }
 
 
+//注意⚠️：1、可以针对任意类型的值进行分支，不再局限整数，且所有的分支至少需要一条指令，如果什么都不干，才用“break;”
+//注意⚠️：2、如果case要多值，使用逗号分隔
 
+
+#额外案例：if var和if let的区别
+let name: String? = "老王"
+let age: Int? = 10
+
+if var nameNew = name,
+    let ageNew = age {                   // 'var'修饰,可以修改'nameNew'的值,'let'修改的不可以修改
+    nameNew = "老李"
+    print(nameNew + String(ageNew))     // 输出:老李10
+}
 
