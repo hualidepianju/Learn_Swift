@@ -178,7 +178,5 @@ let nickname: String? = nil                                   //定义常量nick
 let fullName: String = "John Appleseed"                       //定义常亮fullName为显性字符串型，其值为：John Appleseed
 let informalGreeting = "Hi \(nickname ?? fullName)"           //定义常量informalGreeting为隐性字符串型，其值为：Hi \(nickname ?? fullName)
                                                               //因为常量nickname的值为：nil，所以在常量informalGreeting中显示Hi JohnAppleseed
-var newName: String? = "nihoa"                                //定义变量newName为显性字符串型，使用？在值类型后将值（nihoa）标记为可选值
-let informalGreeting1 = "Hi \(newName ?? fullName)"            //定义常量informalGreeting
 
 
