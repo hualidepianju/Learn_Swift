@@ -155,6 +155,30 @@ print(teamScore)                                    //打印变量teamScore的�
 #注意⚠️：在if语句中，条件必须是布尔表达式
 #（布尔表达式（Boolean expression）是一段代码声明，它最终只有true（真）和false（假）两个取值。最简单的布尔表达式是等式（equality），这种布尔表达式用来测试一个值是否与另一个值相同。）
 #所以类似if score{}是错误的，因为其缺少布尔表达式，即无法判断true或false的值
+#使用？在值类型后将值标记为可选值（包含nil）
+#当你不确定判断对象的值是否为nill时，可以使用if let,且用let做声明时，不可以修改其值
+var optionalName: String? = "John Appleseed"                 //定义变量optionalName为显性字符串型，使用？在值类型后将值标记为可选值（包含nil或包含值）
+var greeting = "Hello!"                                      //定义变量greeting为隐性字符串型，使用？在值类型后将值标记为可选值（包含nil或包含值）
+if let name = optionalName {                                 //创建if语句并和let一起使用，使其可处理可能缺失的值，且常量name的值不可更改
+    greeting = "Hello, \(name)"
+}
 
-#当你
+
+#使用if var，且用var做声明时，可以修改其值
+let name: String? = "老王"                                    //定义常量name为显性字符串型，使用？在值类型后将值标记为可选值（包含nil或包含值）
+let age: Int? = 10                                           //定义常量age为显性整型，使用？在值类型后将值标记为可选值（包含nil或包含值）
+if var nameNew = name{                                       //创建if语句并和var一起使用，也可使其处理可能缺失的值，且变量nameNew的值可更改
+    nameNew = "老李"
+    print(nameNew )     
+}
+
+
+#处理可选值的另一种方法是使用 ?? 。如果缺少可选值，则使用默认值代替。
+let nickname: String? = nil                                   //定义常量nickname为显性字符串型，使用？在值类型后将值标记为可选值（包含nil或包含值）
+let fullName: String = "John Appleseed"                       //定义常亮fullName为显性字符串型，其值为：John Appleseed
+let informalGreeting = "Hi \(nickname ?? fullName)"           //定义常量informalGreeting为隐性字符串型，其值为：Hi \(nickname ?? fullName)
+                                                              //因为常量nickname的值为：nil，所以在常量informalGreeting中显示Hi JohnAppleseed
+var newName: String? = "nihoa"                                //定义变量newName为显性字符串型，使用？在值类型后将值（nihoa）标记为可选值
+let informalGreeting1 = "Hi \(newName ?? fullName)"            //定义常量informalGreeting
+
 
