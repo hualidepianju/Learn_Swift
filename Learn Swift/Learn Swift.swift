@@ -214,21 +214,9 @@ switch math{
   default:
     print("Everything tastes good in soup")
 }
-/*
-//（04）等式测试
-let Equation = 
-switch vegetable{
-  case "celery":
-    print("Add some raisins and make ants an a log")
-  case "cucumber":
-    print("That would make a good tea sandwich")
-  default:
-    print("Everything tastes good in soup")
-}
-*/
 
 
-//（05）综合测试
+//（04）综合测试
 let vegetable = "red pepper"
 switch vegetable {
 case "celery":
