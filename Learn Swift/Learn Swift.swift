@@ -118,10 +118,43 @@ var animals = ["cats", "dogs", "chimps", "moose", "chimps"]
 animals = animals.filter(){$0 != "chimps"}
 print(animals)                              // ["cats", "dogs", "moose"]
 
+# 总结：创建空数组或字典，请使用初始化器语法
+
+let emptyArray: [String] = []
+let emptyDictionary: [String: Float] = [:]
+
+var emptyArray: [String] = []
+var emptyDictionary: [String: Float] = [:]
+
+
+#如果可以推断类型信息，您可以将空数组写成[]空字典为[:]
+#例如，当您为变量设置新值或将参数传递给函数时
+emptyArray = []
+emptyDictionary = [:]
 
 
 
+#    02 day
 
+# Swift Tour - 02)Control Flow
 
+#使用 if 和 switch 生成条件，并使用 for-in、while 和 repeat-while 生成循环
+#条件或循环变量周围的括号是可选的
+#语句的周围需要大括号。
+let individualScores = [75, 43, 103, 87, 12]        //定义常量individualScoroes为整型数组
+var teamScore = 0                                   //定义变量teamScore初始值为0
+for score in individualScores {                     //创建for循环，且创建变量score，其值在individualScores数组中
+    if score > 50 {                                 //创建if判断条件，当变量score满足其值大于50
+        teamScore += 3                              //使变量teamScore加3，且再赋值给变量teamScore
+    } else {                                        //创建else否则条件
+        teamScore += 1                              //使变量teamScore加1，且再赋值给变量teamScore
+    }
+}
+print(teamScore)                                    //打印变量teamScore的值
 
+#注意⚠️：在if语句中，条件必须是布尔表达式
+#（布尔表达式（Boolean expression）是一段代码声明，它最终只有true（真）和false（假）两个取值。最简单的布尔表达式是等式（equality），这种布尔表达式用来测试一个值是否与另一个值相同。）
+#所以类似if score{}是错误的，因为其缺少布尔表达式，即无法判断true或false的值
+
+#当你
 
