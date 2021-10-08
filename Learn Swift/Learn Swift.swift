@@ -139,6 +139,7 @@ emptyDictionary = [:]
 # Swift Tour - 02)Control Flow
 
 #使用 if 和 switch 生成条件，并使用 for-in、while 和 repeat-while 生成循环
+//案例一 if、for-in
 #条件或循环变量周围的括号是可选的
 #语句的周围需要大括号。
 let individualScores = [75, 43, 103, 87, 12]        //定义常量individualScoroes为整型数组
@@ -178,5 +179,68 @@ let nickname: String? = nil                                   //定义常量nick
 let fullName: String = "John Appleseed"                       //定义常亮fullName为显性字符串型，其值为：John Appleseed
 let informalGreeting = "Hi \(nickname ?? fullName)"           //定义常量informalGreeting为隐性字符串型，其值为：Hi \(nickname ?? fullName)
                                                               //因为常量nickname的值为：nil，所以在常量informalGreeting中显示Hi JohnAppleseed
+
+//案例二 switch
+#Switch支持任何类型的数据和各种各样的比较操作——它们不限于整数和相等性测试
+//（01）字符串测试
+let vegetable = "red pepper"
+switch vegetable{
+  case "celery":
+    print("Add some raisins and make ants an a log")
+  case "cucumber":
+    print("That would make a good tea sandwich")
+  default:
+    print("Everything tastes good in soup")
+}
+
+//（02）字符测试
+let word = "a"
+switch word{
+  case "a":
+    print("Add some raisins and make ants an a log")
+  case "b":
+    print("That would make a good tea sandwich")
+  default:
+    print("Everything tastes good in soup")
+}
+
+//（03）整型测试
+let math = 1
+switch math{
+  case 1:
+    print("Add some raisins and make ants an a log")
+  case 2:
+    print("That would make a good tea sandwich")
+  default:
+    print("Everything tastes good in soup")
+}
+/*
+//（04）等式测试
+let Equation = 
+switch vegetable{
+  case "celery":
+    print("Add some raisins and make ants an a log")
+  case "cucumber":
+    print("That would make a good tea sandwich")
+  default:
+    print("Everything tastes good in soup")
+}
+*/
+
+
+//（05）综合测试
+let vegetable = "red pepper"
+switch vegetable {
+case "celery":
+    print("Add some raisins and make ants on a log.")
+case "cucumber", "watercress":
+    print("That would make a good tea sandwich.")
+case let x where x.hasSuffix("pepper"):                             //使用let将模式匹配的值分配给常量
+    print("Is it a spicy \(x)?")
+default:
+    print("Everything tastes good in soup.")
+}
+
+
 
 
