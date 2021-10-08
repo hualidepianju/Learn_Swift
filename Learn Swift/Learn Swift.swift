@@ -237,7 +237,6 @@ default:
 #额外案例：if var和if let的区别
 let name: String? = "老王"
 let age: Int? = 10
-
 if var nameNew = name,
     let ageNew = age {                   // 'var'修饰,可以修改'nameNew'的值,'let'修改的不可以修改
     nameNew = "老李"
